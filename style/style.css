@@ -324,7 +324,7 @@ body {
     .navegacao-principal ul {
         flex-direction: column;
         text-align: center;
-        padding: 20px 0;
+        padding: 40px 0;
         gap: 0; /* Reseta o espaçamento do desktop */
     }
 
@@ -339,7 +339,7 @@ body {
     }
 
     .navegacao-principal li {
-        margin-bottom: 15px;
+        margin-bottom: 30px;
     }
 
     /* Ajustes do Banner para Celular */
@@ -849,4 +849,9 @@ body.dark-mode ::placeholder {
 body.dark-mode .contador-brownies {
     background-color: rgba(255, 255, 255, 0.05);
     color: #ddd;
+}
+
+/* Ajuste específico: Título do contato preto no modo noturno para contraste com o fundo claro */
+body.dark-mode .secao-contato .titulo-secao {
+    color: #000;
 }
