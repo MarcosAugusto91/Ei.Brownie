@@ -226,6 +226,12 @@ body {
     height: auto;
     border-radius: 15px; /* Cantos levemente arredondados */
     filter: drop-shadow(10px 10px 0px rgba(0,0,0,0.2)); /* Sombra na imagem */
+    max-height: 750px;
+}
+
+/* Ícones sociais do Hero (Escondidos no Desktop) */
+.hero-social-mobile {
+    display: none;
 }
 
 /* --- Estilos da Seção de Produtos --- */
@@ -327,6 +333,11 @@ body {
         display: block;
     }
 
+    /* Esconde os botões flutuantes de redes sociais (links), mantém o botão noturno */
+    .botoes-sociais-fixos a {
+        display: none;
+    }
+
     .navegacao-principal li {
         margin-bottom: 15px;
     }
@@ -337,6 +348,18 @@ body {
         text-align: center;
         padding: 40px 20px;
         min-height: auto;
+    }
+
+    /* Mostra e estiliza os ícones sociais no banner apenas no celular */
+    .hero-social-mobile {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        margin: 15px 0;
+    }
+    .hero-social-mobile a {
+        font-size: 2.5rem;
+        color: #333;
     }
 
     /* Oculta o botão de ação principal no celular */
@@ -761,6 +784,7 @@ body.dark-mode {
 body.dark-mode .hero-conteudo h1,
 body.dark-mode .subtitulo-hero,
 body.dark-mode .ano-fundacao,
+body.dark-mode .hero-social-mobile a,
 body.dark-mode .titulo-secao,
 body.dark-mode .card-produto h3,
 body.dark-mode .item-preco .preco,
