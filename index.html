@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/style.css" />
     <title>Ei! Brownie</title>
     <!-- Importando a fonte 'Bangers' do Google Fonts para o tema Geek -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,6 +46,12 @@
         title="Fale Conosco no WhatsApp"
         ><i class="fab fa-whatsapp"></i
       ></a>
+      <button
+        id="toggle-dark-mode"
+        class="social-btn"
+        title="Alternar Modo Noturno"
+        style="cursor: pointer;"
+      ><i class="fas fa-moon"></i></button>
     </div>
 
     <header class="cabecalho-principal">
@@ -82,6 +88,7 @@
         <p class="subtitulo-hero">
           Os brownies mais épicos da galáxia, feitos artesanalmente para o seu
           momento geek.
+          <strong>Atendimento de Segunda à Sexta, das 10h às 18h.</strong>
         </p>
         <p class="ano-fundacao">🗓️ Desde 2020</p>
         <div class="contador-brownies">
@@ -742,5 +749,35 @@
       <p>&copy; 2026 Ei! Brownie. Todos os direitos reservados. | Desde 2020</p>
       <p class="creditos">Desenvolvido por: Marcos Augusto de Azevedo</p>
     </footer>
+
+    <!-- Script para o Modo Noturno -->
+    <script>
+      const toggleBtn = document.getElementById('toggle-dark-mode');
+      const body = document.body;
+      const icon = toggleBtn.querySelector('i');
+
+      // Verifica se o usuário já tem uma preferência salva
+      const currentMode = localStorage.getItem('theme');
+      if (currentMode === 'dark') {
+        body.classList.add('dark-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        // Alterna o ícone e salva a preferência
+        if (body.classList.contains('dark-mode')) {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    </script>
   </body>
 </html>
